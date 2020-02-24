@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>View Job</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+        {% load static %}
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+    </head>
+    <body>
+        <h1 style="display: inline;">Hello {{ user.first_name }} ! These are the
+            job details!</h1>
+        <a href='/job' style="margin-left: 242px; margin-right: 30px;">Dashboard</a>
+        <a href='/logout'>Logout</a>
+
+        <h3>{{job.title}}</h3>
+        <div class="content" style="border: 2px solid black;display:
+            inline-block">
+            <p>Location: {{job.location}}</p>
+            <p>Posted by: {{ user.first_name }}</p>
+            <p>Posted on: {{job.created_at}}</p>
+        </div>
+        <a href="/job/{{job.id}}/edit" style="display: block; margin-top:
+            10px;">Add to my jobs</a>
+    </body>
+</html>
